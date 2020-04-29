@@ -32,12 +32,22 @@ class App extends React.Component {
   }
 
   manipulateChange = (event) => {
-    this.setState({
-      znak: event.target.value,
-      broj1: this.state.input,
-      input:'',
-    })
-  }
+      if(this.state.znak)
+      {
+          this.setState({
+              znak:event.target.value,
+              input:''
+           })
+
+      }
+        else {
+            this.setState({
+            znak: event.target.value,
+            broj1: this.state.input,
+            input:'',
+         })
+      }
+  };
 
 
   reset = () => {
